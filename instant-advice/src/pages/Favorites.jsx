@@ -23,11 +23,11 @@ export default function Favorites() {
 
     return(
         <main className="Favorites">
-            <h2>Favorites <span className="Sub">Advices</span></h2>
+            <h2>Favorites <span className="Sub">Advices</span> ❤</h2>
             <ul>
                 {favorites.map((fav, index) => (
                     <li key={index}>
-                        { fav }
+                        📣 : { fav }
                         <div>
                             <button className="Trash" onClick={() => {
                                 handleDelete(fav);

@@ -8,7 +8,7 @@ export default function Advice({ advice }) {
             whileHover={{ scale: 1.05 }}
             className="Advice"
         >
-            {advice}
+            📣 : {advice}
         </motion.p>
     );
 }
