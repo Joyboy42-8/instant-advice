@@ -1,31 +1,30 @@
-import { useEffect } from "react";
-import { toast } from "react-toastify";
-import Advice from "./components/Advice";
-import Button from "./components/Button";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 import Layout from "./components/Layout";
-import { useFetch } from "./components/Hooks";
+import Error from "./components/Error";
+
 
 export default function App() {
-  const { advice, loading, error, refetch } = useFetch("https://api.adviceslip.com/advice");
-
-
-  useEffect(() => {
-    let loadingToast;
-    if (loading) {
-      loadingToast = toast.info("Chargement du conseil...");
-    } else {
-      toast.dismiss(loadingToast);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      errorElement: <Error />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "favorites",
+          element: <Favorites />
+        }
+      ],
     }
-  }, [loading]);
+  ]);
 
-  useEffect(() => {
-    if (error) toast.error(error);
-  }, [error]);
-
-  return (
-    <Layout>
-      <Advice advice={advice} />
-      <Button onChangeAdvice={refetch} />
-    </Layout>
+  return(
+    <RouterProvider router={router} />
   );
 }
