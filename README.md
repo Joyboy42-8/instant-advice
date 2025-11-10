@@ -20,8 +20,9 @@
 - **React Router** : Navigation entre les pages
 - **Framer Motion** : Animations des boutons et transitions
 - **React Toastify** : Notifications lors de l’ajout/suppression de favoris
+- **Lucide React ** : Icones
 - **localStorage** : Stockage persistant des conseils favoris
-- **CSS / Tailwind (optionnel)** : Style et layout
+- **CSS / Tailwind / DaisyUI ** : Style et layout
 
 ---
 
@@ -69,7 +70,7 @@ L’application sera disponible sur http://localhost:3000.
 
 ## 📄 Licence
 
-MIT License © 2025 - [Votre nom ou pseudo GitHub]
+MIT License © 2025 - Joyboy42-8
 
 > Ce projet est ouvert aux contributions. Même si c’est un petit projet, tout développeur peut proposer des améliorations ou des fonctionnalités supplémentaires.
 
