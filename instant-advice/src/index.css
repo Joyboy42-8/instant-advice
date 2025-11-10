@@ -11,6 +11,10 @@ body {
     position: relative;
 }
 
+.Me {
+    @apply btn btn-circle shadow-lg animate-bounce shadow-accent absolute bottom-10 left-10;
+}
+
 .Link {
     @apply absolute top-5 right-10 border-b border-b-2 border-b-accent 
     hover:-translate-y-2 transition duration-100;

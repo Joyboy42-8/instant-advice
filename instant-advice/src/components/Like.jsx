@@ -2,8 +2,7 @@ import { Heart } from "lucide-react";
 import { motion } from "motion/react"
 import { useState } from "react";
 
-export default function Like({ onLike }) {
-    const [liked, setLiked] = useState(false);
+export default function Like({ liked, setLiked, onLike }) {
     return(
         <motion.button 
             className="LikeButton" 
@@ -13,7 +12,7 @@ export default function Like({ onLike }) {
             }}
             whileTap={{ scale: 0.9 }}
         >
-            <Heart fill={liked && "red"} color="red" />
+            <Heart fill={liked ? "red" : undefined} color="red" />
         </motion.button>
     );
 }

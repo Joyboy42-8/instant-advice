@@ -10,6 +10,7 @@ import { Messages } from "../utils/messages";
 
 export default function Home() {
   const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
+  const [liked, setLiked] = useState(false);
   const { advice, loading, error, refetch } = useFetch("https://api.adviceslip.com/advice");
 
   const handleFavorite = (liked) => {
@@ -43,8 +44,8 @@ export default function Home() {
     <main className="Home">
       <Advice advice={advice} />
       <Actions>
-        <Button onChangeAdvice={refetch} />
-        <Like onLike={handleFavorite} />
+        <Button onChangeAdvice={refetch} resetLiked={setLiked} />
+        <Like liked={liked} setLiked={setLiked} onLike={handleFavorite} />
       </Actions>
       <Link className="Link" to="/favorites">
         Favorites
